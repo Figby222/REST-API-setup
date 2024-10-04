@@ -2,4 +2,8 @@ function indexRouteGet(req, res) {
     res.render("index", { title: "Node Template" });
 }
 
-export { indexRouteGet };
+function indexRoutePost(req, res) {
+    return res.send("Recieved POST HTTP method");
+}
+
+export { indexRouteGet, indexRoutePost };
