@@ -9,4 +9,6 @@ indexRouter.post("/", indexController.indexRoutePost);
 
 indexRouter.put("/", indexController.indexRoutePut);
 
+indexRouter.delete("/", indexController.indexRouteDelete);
+
 export default indexRouter;
