@@ -7,4 +7,6 @@ indexRouter.get("/", indexController.indexRouteGet);
 
 indexRouter.post("/", indexController.indexRoutePost);
 
+indexRouter.put("/", indexController.indexRoutePut);
+
 export default indexRouter;
