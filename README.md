@@ -1,1 +1,1 @@
-A Node.js template repository
+A Node.js repository used to setup a RESTful API
