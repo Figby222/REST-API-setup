@@ -6,4 +6,8 @@ function indexRoutePost(req, res) {
     return res.send("Received POST HTTP method");
 }
 
-export { indexRouteGet, indexRoutePost };
+function indexRoutePut(req, res) {
+    return res.send("Received PUT HTTP method");
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut };
