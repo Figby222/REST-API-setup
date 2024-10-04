@@ -5,4 +5,6 @@ const indexRouter = Router();
 
 indexRouter.get("/", indexController.indexRouteGet);
 
+indexRouter.post("/", indexController.indexRoutePost);
+
 export default indexRouter;
