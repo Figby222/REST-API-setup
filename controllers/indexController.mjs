@@ -10,4 +10,8 @@ function indexRoutePut(req, res) {
     return res.send("Recieved PUT JTTP method");
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut };
+function indexRouteDelete(req, res) {
+    return res.send("Recieved DELETE HTTP method");
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete };
