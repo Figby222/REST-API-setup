@@ -3,6 +3,8 @@ import * as indexController from "../controllers/indexController.mjs";
 
 const indexRouter = Router();
 
+indexRouter.use(indexController.myMiddleware);
+
 indexRouter.get("/users", indexController.indexRouteGet);
 
 indexRouter.get("/users/:userId", indexController.userDetailsGet);
