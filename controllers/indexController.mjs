@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import models from "./models/index.mjs";
+import models from "../models/index.mjs";
 
 function setModels(req, res, next) {
     req.context = {
