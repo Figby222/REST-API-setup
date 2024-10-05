@@ -47,4 +47,8 @@ function messagesListGet(req, res) {
     res.send(Object.values(messages))
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet };
+function messageDetailsGet(req, res) {
+    res.send(messages[req.params.messageId])
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet };
