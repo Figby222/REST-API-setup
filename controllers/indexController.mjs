@@ -1,4 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
+import models from "./models/index.mjs";
+
+function setModels(req, res, next) {
+    req.context = {
+        models,
+        me: models.users[4],
+    }
+    next();
+}
 
 function myMiddleware(req, res, next) {
     req.me = users[4];
@@ -61,4 +70,4 @@ function sessionInfoGet(req, res) {
     res.send(users[req.me.id])
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete, sessionInfoGet };
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete, sessionInfoGet, setModels };
