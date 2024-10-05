@@ -15,4 +15,10 @@ indexRouter.delete("/users/:userId", indexController.indexRouteDelete);
 
 indexRouter.get("/messages", indexController.messagesListGet);
 
+indexRouter.get("/messages/:messageId", indexController.messageDetailsGet);
+
+
+
+
+
 export default indexRouter;
