@@ -26,6 +26,10 @@ function indexRouteGet(req, res) {
     res.render("index", { title: "Node Template" });
 }
 
+function userDetailsGet(req, res) {
+    res.send(users[req.params.userId])
+}
+
 function indexRoutePost(req, res) {
     return res.send("Received POST HTTP method");
 }
@@ -38,4 +42,4 @@ function indexRouteDelete(req, res) {
     return res.send(`Received DELETE HTTP method for user with id: ${req.params.userId}`);
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete };
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet };
