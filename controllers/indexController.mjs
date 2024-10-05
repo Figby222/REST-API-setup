@@ -9,6 +9,14 @@ const users = {
         id: "2",
         username: "AwesomeSandwich",
     },
+    3: {
+        id: "3",
+        username: "SandwichGuy",
+    },
+    4: {
+        id: "4",
+        username: "SandwichCookies",
+    },
 };
 
 const messages = {
@@ -22,7 +30,22 @@ const messages = {
         text: "Hello CoolGuy",
         userId: "2",
     },
+    3: {
+        id: "3",
+        text: "Hello Cookies",
+        userId: "3"
+    },
+    4: {
+        id: "4",
+        text: "Hello Sandwich",
+        userId: "4",
+    },
 };
+
+function myMiddleware(req, res, next) {
+    req.me = users[4];
+    next();
+}
 
 function indexRouteGet(req, res) {
     res.send(Object.values(users));
@@ -64,4 +87,4 @@ function createMessagePost(req, res) {
     res.send(message);
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost };
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware };
