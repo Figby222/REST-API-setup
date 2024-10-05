@@ -81,6 +81,7 @@ function createMessagePost(req, res) {
     const message = {
         id,
         text: req.body.text,
+        userId: req.me.id,
     }
 
     messages[id] = message;
