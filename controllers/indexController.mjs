@@ -10,12 +10,12 @@ function setModels(req, res, next) {
 }
 
 function myMiddleware(req, res, next) {
-    req.me = users[4];
+    req.me = req.models.users[4];
     next();
 }
 
 function indexRouteGet(req, res) {
-    res.send(Object.values(users));
+    res.send(Object.values(req.models.users));
     // res.render("index", { title: "Node Template" });
 }
 
@@ -36,11 +36,11 @@ function indexRouteDelete(req, res) {
 }
 
 function messagesListGet(req, res) {
-    res.send(Object.values(messages))
+    res.send(Object.values(req.models.messages))
 }
 
 function messageDetailsGet(req, res) {
-    res.send(messages[req.params.messageId])
+    res.send(req.models.messages[req.params.messageId])
 }
 
 function createMessagePost(req, res) {
@@ -48,10 +48,10 @@ function createMessagePost(req, res) {
     const message = {
         id,
         text: req.body.text,
-        userId: req.me.id,
+        userId: req.context.me.id,
     }
 
-    messages[id] = message;
+    req.models.messages[id] = message;
     res.send(message);
 }
 
@@ -59,15 +59,15 @@ function messageDelete(req, res) {
     const {
         [req.params.messageId]: message,
         ...otherMessages
-    } = messages;
+    } = req.models.messages;
 
-    messages = otherMessages;
+    req.models.messages = otherMessages;
 
     res.send(message);
 }
 
 function sessionInfoGet(req, res) {
-    res.send(users[req.me.id])
+    res.send(req.models.users[req.me.id])
 }
 
 export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete, sessionInfoGet, setModels };
