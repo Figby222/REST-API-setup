@@ -99,4 +99,8 @@ function messageDelete(req, res) {
     res.send(message);
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete };
+function sessionInfoGet(req, res) {
+    res.send(users[req.me.id])
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete, sessionInfoGet };
