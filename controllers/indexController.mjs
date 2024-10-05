@@ -19,7 +19,7 @@ const users = {
     },
 };
 
-const messages = {
+let messages = {
     1: {
         id: "1",
         text: "Hello Sandwich",
