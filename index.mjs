@@ -1,5 +1,6 @@
 import express from "express";
 const app = express();
+import routers from "./routers/index.mjs";
 import indexRouter from "./routers/indexRouter.mjs";
 import "dotenv/config";
 import path from "node:path";
@@ -32,14 +33,13 @@ app.use(passport.session());
 app.use(myMiddleware);
 app.use(setModels);
 
-
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", indexRouter);
-
+app.use("/session", routers.sessionsRouter);
+app.use("/users", routers.usersRouter);
+app.use("/messages", routers.messagesRouter);
+app.use("/", routers.indexRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}`);
