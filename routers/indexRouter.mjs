@@ -9,6 +9,6 @@ indexRouter.post("/users", indexController.indexRoutePost);
 
 indexRouter.put("/users/:userId", indexController.indexRoutePut);
 
-indexRouter.delete("/users", indexController.indexRouteDelete);
+indexRouter.delete("/users/:userId", indexController.indexRouteDelete);
 
 export default indexRouter;
