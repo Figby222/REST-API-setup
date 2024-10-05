@@ -17,7 +17,7 @@ indexRouter.get("/messages", indexController.messagesListGet);
 
 indexRouter.get("/messages/:messageId", indexController.messageDetailsGet);
 
-
+indexRouter.post("/messages", indexController.createMessagePost);
 
 
 
