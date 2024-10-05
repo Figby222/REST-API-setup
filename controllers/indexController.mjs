@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const users = {
     1: {
         id: "1",
@@ -51,4 +53,15 @@ function messageDetailsGet(req, res) {
     res.send(messages[req.params.messageId])
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet };
+function createMessagePost(req, res) {
+    const id = uuidv4();
+    const message = {
+        id,
+        text: req.body.text,
+    }
+
+    messages[id] = message;
+    res.send(message);
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost };
