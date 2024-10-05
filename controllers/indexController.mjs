@@ -23,7 +23,8 @@ const messages = {
 };
 
 function indexRouteGet(req, res) {
-    res.render("index", { title: "Node Template" });
+    res.send(Object.values(users));
+    // res.render("index", { title: "Node Template" });
 }
 
 function userDetailsGet(req, res) {
