@@ -88,4 +88,15 @@ function createMessagePost(req, res) {
     res.send(message);
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware };
+function messageDelete(req, res) {
+    const {
+        [req.params.messageId]: message,
+        ...otherMessages
+    } = messages;
+
+    messages = otherMessages;
+
+    res.send(message);
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet, messageDetailsGet, createMessagePost, myMiddleware, messageDelete };
