@@ -17,12 +17,21 @@ function setModels(req, res, next) {
     next();
 }
 
+function myMiddleware(req, res, next) {
+    req.me = req.models.users[4];
+    next();
+}
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(session);
 app.use(passport.session());
 app.use(myMiddleware);
+app.use(setModels);
+
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
