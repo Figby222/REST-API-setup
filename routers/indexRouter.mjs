@@ -3,12 +3,12 @@ import * as indexController from "../controllers/indexController.mjs";
 
 const indexRouter = Router();
 
-indexRouter.get("/", indexController.indexRouteGet);
+indexRouter.get("/users", indexController.indexRouteGet);
 
-indexRouter.post("/", indexController.indexRoutePost);
+indexRouter.post("/users", indexController.indexRoutePost);
 
-indexRouter.put("/", indexController.indexRoutePut);
+indexRouter.put("/users", indexController.indexRoutePut);
 
-indexRouter.delete("/", indexController.indexRouteDelete);
+indexRouter.delete("/users", indexController.indexRouteDelete);
 
 export default indexRouter;
