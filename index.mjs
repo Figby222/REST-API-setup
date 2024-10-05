@@ -14,6 +14,7 @@ app.set("view engine", "ejs");
 app.use(session);
 app.use(passport.session());
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
