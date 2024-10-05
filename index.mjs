@@ -6,6 +6,7 @@ import path from "node:path";
 import session from "./config/expressSession.mjs";
 import passport from "./config/passport.mjs";
 import models from "./models/index.mjs";
+import cors from "cors";
 
 const __dirname = import.meta.dirname;
 
@@ -25,6 +26,7 @@ function myMiddleware(req, res, next) {
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(cors());
 app.use(session);
 app.use(passport.session());
 app.use(myMiddleware);
