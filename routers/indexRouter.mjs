@@ -2,8 +2,6 @@ import { Router } from "express";
 import * as indexController from "../controllers/indexController.mjs";
 
 const indexRouter = Router();
-indexRouter.use(indexController.setModels);
-indexRouter.use(indexController.myMiddleware);
 
 indexRouter.get("/users", indexController.indexRouteGet);
 
