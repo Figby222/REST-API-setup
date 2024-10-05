@@ -43,4 +43,8 @@ function indexRouteDelete(req, res) {
     return res.send(`Received DELETE HTTP method for user with id: ${req.params.userId}`);
 }
 
-export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet };
+function messagesListGet(req, res) {
+    res.send(Object.values(messages))
+}
+
+export { indexRouteGet, indexRoutePost, indexRoutePut, indexRouteDelete, userDetailsGet, messagesListGet };
